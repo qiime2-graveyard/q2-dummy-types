@@ -20,6 +20,10 @@ setup(
                 "developers.",
     license='BSD-3-Clause',
     url="https://github.com/qiime2/q2-dummy-types",
+    # Use the 'qiime.plugins' entry point to make this plugin discoverable by
+    # the QIIME 2 framework. The path after the equals sign (=) is the full
+    # import path to a `qiime.plugin.Plugin` object. This object can be located
+    # anywhere within the package.
     entry_points={
         'qiime.plugins':
         ['q2-dummy-types=q2_dummy_types.plugin_setup:plugin']

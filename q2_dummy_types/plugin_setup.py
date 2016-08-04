@@ -19,5 +19,11 @@ plugin = qiime.plugin.Plugin(
     package='q2_dummy_types'
 )
 
+# It is important that any modules registering functionality onto the
+# `qiime.plugin.Plugin` object are imported so the registrations take place.
+# When the QIIME 2 framework discovers plugin objects, it only imports the
+# module where the plugin is defined, so any modules that register
+# functionality onto this object must also be imported. If registrations happen
+# in the same module as the plugin object this step is not necessary.
 importlib.import_module('q2_dummy_types._int_sequence')
 importlib.import_module('q2_dummy_types._mapping')

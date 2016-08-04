@@ -8,6 +8,8 @@
 
 __version__ = "0.0.1"  # noqa
 
+# Make the types defined in this plugin importable from the top-level package
+# so they can be easily imported by other plugins relying on these types.
 from ._int_sequence import IntSequence1, IntSequence2
 from ._mapping import Mapping
 
