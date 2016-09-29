@@ -16,8 +16,7 @@ IntSequence1 = qiime.plugin.SemanticType('IntSequence1')
 IntSequence2 = qiime.plugin.SemanticType('IntSequence2')
 
 # Register semantic types on the plugin.
-plugin.register_semantic_type(IntSequence1)
-plugin.register_semantic_type(IntSequence2)
+plugin.register_semantic_types(IntSequence1, IntSequence2)
 
 
 ###############################################################################
@@ -50,6 +49,10 @@ class IntSequenceFormat(model.TextFileFormat):
 # only has a single file, ints.txt, with file format `IntSequenceFormat`.
 IntSequenceDirectoryFormat = model.SingleFileDirectoryFormat(
     'IntSequenceDirectoryFormat', 'ints.txt', IntSequenceFormat)
+
+# Register the formats defined above. Formats must be unique across all
+# plugins installed on a users system.
+plugin.register_formats(IntSequenceFormat, IntSequenceDirectoryFormat)
 
 # Register the directory format with the semantic types defined above. A
 # directory format can be registered to multiple semantic types. Currently, a

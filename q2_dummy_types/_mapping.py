@@ -15,7 +15,7 @@ from .plugin_setup import plugin
 Mapping = qiime.plugin.SemanticType('Mapping')
 
 # Register semantic types on the plugin.
-plugin.register_semantic_type(Mapping)
+plugin.register_semantic_types(Mapping)
 
 
 ###############################################################################
@@ -49,6 +49,9 @@ class MappingFormat(model.TextFileFormat):
 MappingDirectoryFormat = model.SingleFileDirectoryFormat(
     'MappingDirectoryFormat', 'mapping.tsv', MappingFormat)
 
+# Register the formats defined above. Formats must be unique across all
+# plugins installed on a users system.
+plugin.register_formats(MappingFormat, MappingDirectoryFormat)
 
 # Register the directory format with the semantic types defined above. A
 # directory format can be registered to multiple semantic types. Currently, a
