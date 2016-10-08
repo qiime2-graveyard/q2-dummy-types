@@ -11,9 +11,9 @@ from setuptools import setup, find_packages
 setup(
     name="q2-dummy-types",
     # TODO stop duplicating version string
-    version="0.0.1",
+    version="0.0.5",
     packages=find_packages(),
-    install_requires=['qiime >= 2.0.0'],
+    install_requires=['qiime >= 2.0.5'],
     author="Jai Ram Rideout",
     author_email="jai.rideout@gmail.com",
     description="Dummy QIIME 2 types to serve as examples for plugin "

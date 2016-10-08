@@ -6,7 +6,7 @@
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-__version__ = "0.0.1"  # noqa
+__version__ = "0.0.5"  # noqa
 
 # Make the types defined in this plugin importable from the top-level package
 # so they can be easily imported by other plugins relying on these types.
