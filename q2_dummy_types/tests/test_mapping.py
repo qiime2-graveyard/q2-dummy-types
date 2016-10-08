@@ -24,7 +24,6 @@ class TestMapping(unittest.TestCase):
         artifact = Artifact.import_data(Mapping, fp)
 
         self.assertEqual(artifact.type, Mapping)
-        self.assertIn('importing data', artifact.provenance)
         self.assertIsInstance(artifact.uuid, uuid.UUID)
 
     def test_reader_transformer(self):
@@ -46,7 +45,7 @@ class TestMapping(unittest.TestCase):
         # `model.SingleFileDirectoryFormat` handles that transformation for
         # us.
         artifact = Artifact._from_view(Mapping, {'abc': 'cat', 'def': 'dog'},
-                                       dict, None)
+                                       dict)
         # Test that the directory and file format can be read again.
         self.assertEqual(artifact.view(dict), {'abc': 'cat', 'def': 'dog'})
 

@@ -25,7 +25,6 @@ class TestIntSequence(unittest.TestCase):
             artifact = Artifact.import_data(type, fp)
 
             self.assertEqual(artifact.type, type)
-            self.assertIn('importing data', artifact.provenance)
             self.assertIsInstance(artifact.uuid, uuid.UUID)
 
     def test_reader_transformer(self):
@@ -47,8 +46,7 @@ class TestIntSequence(unittest.TestCase):
             # `SingleIntFormat` tranformer because
             # `model.SingleFileDirectoryFormat` handles that transformation for
             # us.
-            artifact = Artifact._from_view(type, [1, 2, 42, -999, 42, 0], list,
-                                           None)
+            artifact = Artifact._from_view(type, [1, 2, 42, -999, 42, 0], list)
             # Test that the directory and file format can be read again.
             self.assertEqual(artifact.view(list), [1, 2, 42, -999, 42, 0])
 
