@@ -10,8 +10,10 @@ import pkg_resources
 import unittest
 import uuid
 
-from q2_dummy_types import IntSequence1, IntSequence2
+import qiime.core.archive as archive
 from qiime.sdk import Artifact
+
+from q2_dummy_types import IntSequence1, IntSequence2
 
 
 class TestIntSequence(unittest.TestCase):
@@ -46,7 +48,8 @@ class TestIntSequence(unittest.TestCase):
             # `SingleIntFormat` tranformer because
             # `model.SingleFileDirectoryFormat` handles that transformation for
             # us.
-            artifact = Artifact._from_view(type, [1, 2, 42, -999, 42, 0], list)
+            artifact = Artifact._from_view(type, [1, 2, 42, -999, 42, 0], list,
+                                           archive.ImportProvenanceCapture())
             # Test that the directory and file format can be read again.
             self.assertEqual(artifact.view(list), [1, 2, 42, -999, 42, 0])
 

@@ -10,8 +10,10 @@ import pkg_resources
 import unittest
 import uuid
 
-from q2_dummy_types import Mapping
+import qiime.core.archive as archive
 from qiime.sdk import Artifact
+
+from q2_dummy_types import Mapping
 
 
 class TestMapping(unittest.TestCase):
@@ -45,7 +47,7 @@ class TestMapping(unittest.TestCase):
         # `model.SingleFileDirectoryFormat` handles that transformation for
         # us.
         artifact = Artifact._from_view(Mapping, {'abc': 'cat', 'def': 'dog'},
-                                       dict)
+                                       dict, archive.ImportProvenanceCapture())
         # Test that the directory and file format can be read again.
         self.assertEqual(artifact.view(dict), {'abc': 'cat', 'def': 'dog'})
 
