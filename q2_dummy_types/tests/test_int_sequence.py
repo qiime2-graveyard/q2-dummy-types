@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-# Copyright (c) 2016--, QIIME development team.
+# Copyright (c) 2016-2017, QIIME 2 development team.
 #
 # Distributed under the terms of the Modified BSD License.
 #
@@ -10,8 +10,8 @@ import pkg_resources
 import unittest
 import uuid
 
-import qiime.core.archive as archive
-from qiime.sdk import Artifact
+import qiime2.core.archive as archive
+from qiime2.sdk import Artifact
 
 from q2_dummy_types import IntSequence1, IntSequence2
 

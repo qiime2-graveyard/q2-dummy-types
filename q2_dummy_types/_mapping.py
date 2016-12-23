@@ -1,18 +1,18 @@
 # ----------------------------------------------------------------------------
-# Copyright (c) 2016--, QIIME development team.
+# Copyright (c) 2016-2017, QIIME 2 development team.
 #
 # Distributed under the terms of the Modified BSD License.
 #
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-import qiime.plugin
-import qiime.plugin.model as model
+import qiime2.plugin
+import qiime2.plugin.model as model
 
 from .plugin_setup import plugin
 
 # Define semantic types.
-Mapping = qiime.plugin.SemanticType('Mapping')
+Mapping = qiime2.plugin.SemanticType('Mapping')
 
 # Register semantic types on the plugin.
 plugin.register_semantic_types(Mapping)
@@ -41,6 +41,7 @@ class MappingFormat(model.TextFileFormat):
                 if len(cells) != 2:
                     return False
             return True
+
 
 # Define a directory format. A directory format is a directory structure
 # composed of one or more files (nested directories are also supported). Each

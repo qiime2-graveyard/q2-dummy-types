@@ -1,19 +1,19 @@
 # ----------------------------------------------------------------------------
-# Copyright (c) 2016--, QIIME development team.
+# Copyright (c) 2016-2017, QIIME 2 development team.
 #
 # Distributed under the terms of the Modified BSD License.
 #
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-import qiime.plugin
-import qiime.plugin.model as model
+import qiime2.plugin
+import qiime2.plugin.model as model
 
 from .plugin_setup import plugin
 
 # Define semantic types.
-IntSequence1 = qiime.plugin.SemanticType('IntSequence1')
-IntSequence2 = qiime.plugin.SemanticType('IntSequence2')
+IntSequence1 = qiime2.plugin.SemanticType('IntSequence1')
+IntSequence2 = qiime2.plugin.SemanticType('IntSequence2')
 
 # Register semantic types on the plugin.
 plugin.register_semantic_types(IntSequence1, IntSequence2)
@@ -42,6 +42,7 @@ class IntSequenceFormat(model.TextFileFormat):
                 except (TypeError, ValueError):
                     return False
             return True
+
 
 # Define a directory format. A directory format is a directory structure
 # composed of one or more files (nested directories are also supported). Each

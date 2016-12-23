@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-# Copyright (c) 2016--, QIIME development team.
+# Copyright (c) 2016-2017, QIIME 2 development team.
 #
 # Distributed under the terms of the Modified BSD License.
 #
@@ -8,11 +8,11 @@
 
 import importlib
 
-import qiime.plugin
+import qiime2.plugin
 
 import q2_dummy_types
 
-plugin = qiime.plugin.Plugin(
+plugin = qiime2.plugin.Plugin(
     name='dummy-types',
     version=q2_dummy_types.__version__,
     website='https://github.com/qiime2/q2-dummy-types',
@@ -20,7 +20,7 @@ plugin = qiime.plugin.Plugin(
 )
 
 # It is important that any modules registering functionality onto the
-# `qiime.plugin.Plugin` object are imported so the registrations take place.
+# `qiime2.plugin.Plugin` object are imported so the registrations take place.
 # When the QIIME 2 framework discovers plugin objects, it only imports the
 # module where the plugin is defined, so any modules that register
 # functionality onto this object must also be imported. If registrations happen
