@@ -10,11 +10,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="q2-dummy-types",
-    version='2017.2.0',
+    version='2017.3.0.dev',
     license='BSD-3-Clause',
     url='https://qiime2.org',
     packages=find_packages(),
-    install_requires=['qiime2 == 2017.2.*'],
+    install_requires=['qiime2 == 2017.3.*'],
     author="Jai Ram Rideout",
     author_email="jai.rideout@gmail.com",
     description="Dummy QIIME 2 types to serve as examples for plugin "
